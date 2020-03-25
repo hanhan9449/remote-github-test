@@ -6,8 +6,10 @@ before_script:
 script:
   - yarn build
 deploy:
-  provider: pages
   github_token: $GH_TOKEN
+  provider: pages
+  skip_cleanup: true
+  keep_history: true
   on: 
     branch: master
-  local_dir: build  
+  local_dir: ./build  
