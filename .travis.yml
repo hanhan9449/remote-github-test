@@ -6,3 +6,9 @@ before_script:
 - yarn
 script:
 - yarn build
+deploy:
+  provider: pages
+  github_token: $GH_TOKEN
+  on: 
+    branch: master
+  local_dir: ./build
